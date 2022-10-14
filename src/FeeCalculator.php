@@ -11,5 +11,6 @@ interface FeeCalculator
     /**
      * @return float The calculated total fee.
      */
-    public function calculate(LoanApplication $application): float;
+    public function calculate(LoanApplication $application)
+    : float;
 }

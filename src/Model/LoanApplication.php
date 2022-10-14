@@ -21,10 +21,10 @@ class LoanApplication
     }
 
     /**
-     * Term (loan duration) for this loan application
-     * in number of months.
+     * Term (loan duration) for this loan application in number of months.
      */
-    public function term(): int
+    public function term()
+    : int
     {
         return $this->term;
     }
@@ -32,7 +32,8 @@ class LoanApplication
     /**
      * Amount requested for this loan application.
      */
-    public function amount(): float
+    public function amount()
+    : float
     {
         return $this->amount;
     }
