@@ -9,7 +9,11 @@ use Lendable\Interview\Interpolation\Model\LoanApplication;
 interface FeeCalculatorInterface
 {
     /**
-     * @return float The calculated total fee.
+     * The calculated total fee
+     *
+     * @param LoanApplication $application
+     *
+     * @return float
      */
     public function calculate(LoanApplication $application)
     : float;

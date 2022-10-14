@@ -1,20 +1,18 @@
 {
-    "name": "lendable/interview-interpolation",
-    "type": "project",
-    "autoload": {
-      "psr-4": {
-        "Lendable\\Interview\\Interpolation\\": "src/"
-      }
-    },
-    "autoload-dev": {
-      "psr-4": {
-        "Lendable\\Interview\\Interpolation\\Tests\\": "tests/"
-      }
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^9"
-    },
-    "require": {
-        "php-di/php-di": "^6.4"
+  "name": "lendable/interview-interpolation",
+  "type": "project",
+  "candidate": "Josef van Niekerk",
+  "autoload": {
+    "psr-4": {
+      "Lendable\\Interview\\Interpolation\\": "src/"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Lendable\\Interview\\Interpolation\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9"
+  }
 }
