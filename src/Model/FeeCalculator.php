@@ -2,7 +2,7 @@
 
 namespace Lendable\Interview\Interpolation\Model;
 
-use Lendable\Interview\Interpolation\FeeCalculator as FeeCalculatorInterface;
+use Lendable\Interview\Interpolation\FeeCalculatorInterface;
 
 class FeeCalculator implements FeeCalculatorInterface
 {
@@ -20,7 +20,7 @@ class FeeCalculator implements FeeCalculatorInterface
             return $feeBounds;
         }
 
-        $fee = $this->calculateFee($amount, $feeBounds);
+        $fee = $this->interpolateFeeLinearly($amount, $feeBounds);
         $total = $this->roundUpToAny($fee + $amount);
         return round($total - $amount, 2);
     }
@@ -115,7 +115,7 @@ class FeeCalculator implements FeeCalculatorInterface
      *
      * @return float
      */
-    private function calculateFee(float $amount, array $feeBounds)
+    private function interpolateFeeLinearly(float $amount, array $feeBounds)
     : float {
         return $feeBounds[0]['fee'] + (($amount - $feeBounds[0]['amount']) * ($feeBounds[1]['fee'] - $feeBounds[0]['fee']) / ($feeBounds[1]['amount'] - $feeBounds[0]['amount']));
     }

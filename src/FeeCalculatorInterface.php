@@ -6,7 +6,7 @@ namespace Lendable\Interview\Interpolation;
 
 use Lendable\Interview\Interpolation\Model\LoanApplication;
 
-interface FeeCalculator
+interface FeeCalculatorInterface
 {
     /**
      * @return float The calculated total fee.
