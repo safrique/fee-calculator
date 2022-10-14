@@ -22,6 +22,7 @@ Implement your solution such that it fulfils the requirements.
 - You can assume values will always be within this range but they may be any value up to 2 decimal places.
 
 Example inputs/outputs:
+
 |Loan amount  |Term       |Fee     |
 |-------------|-----------|--------|
 |£11,500      |24 months  |£460    |
