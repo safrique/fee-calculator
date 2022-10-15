@@ -19,7 +19,7 @@ use Lendable\Interview\Interpolation\Validators\LoanTermValidator;
     <script src="https://kit.fontawesome.com/d49395a1f2.js" crossorigin="anonymous"></script>
 
     <!-- Style Sheet -->
-    <link rel="stylesheet" href="public/assets/css/form.css">
+    <link rel="stylesheet" href="public/assets/css/index.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="public/assets/img/icons8-wallet-16.png">
@@ -56,6 +56,7 @@ use Lendable\Interview\Interpolation\Validators\LoanTermValidator;
             }
 
             $terms = LoanTermValidator::getAvailableTerms();
+
             foreach ($terms as $term) {
                 if (empty($_POST['term']) || $term != $_POST['term']) {
                     echo "<option value='$term'>$term</option>";
@@ -102,6 +103,7 @@ use Lendable\Interview\Interpolation\Validators\LoanTermValidator;
                 $application = new LoanApplication($term, $amount);
                 $fee = (new FeeCalculator())->calculate($application);
                 ?>
+
                 <div style="max-width:500px; margin:auto">
                     <h3>Loan Schedule:</h3>
                     <table>
@@ -130,6 +132,7 @@ use Lendable\Interview\Interpolation\Validators\LoanTermValidator;
                         </tbody>
                     </table>
                 </div>
+
                 <?php
             } catch (Exception $e) {
                 echo 'An error occurred: <span class="error">' . $e->getMessage() . '</span>';
