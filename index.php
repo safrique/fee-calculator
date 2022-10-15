@@ -22,7 +22,7 @@ use Lendable\Interview\Interpolation\Validators\LoanTermValidator;
     <link rel="stylesheet" href="public/assets/css/form.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="public/assets/img/icons8-wallet-64.png">
+    <link rel="icon" type="image/x-icon" href="public/assets/img/icons8-wallet-16.png">
 </head>
 <body>
 <form action="" style="max-width:500px; margin:auto">
@@ -34,7 +34,9 @@ use Lendable\Interview\Interpolation\Validators\LoanTermValidator;
 </form>
 
 <form action="" method="post" style="max-width:500px; margin:auto">
-    <label for="amount">Amount</label><br>
+    <div class="label">
+        <label for="amount">Loan Amount:</label>
+    </div>
     <div class="input-container">
         <i class="fa-solid fa-sterling-sign icon"></i>
         <input class="input-field" type="number" step=".01" min="1000" max="20000" name="amount"
@@ -42,7 +44,9 @@ use Lendable\Interview\Interpolation\Validators\LoanTermValidator;
                echo $_POST['amount'] ?? 1000 ?>" id="amount">
     </div>
 
-    <label for="term">Term</label><br>
+    <div class="label">
+        <label for="term">Term (months):</label>
+    </div>
     <div class="input-container">
         <i class="fa-solid fa-calendar-days icon"></i>
         <select class="input-field" name="term" id="term">
