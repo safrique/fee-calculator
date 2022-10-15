@@ -20,6 +20,9 @@ use Lendable\Interview\Interpolation\Validators\LoanTermValidator;
 
     <!-- Style Sheet -->
     <link rel="stylesheet" href="public/assets/css/form.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="public/assets/img/icons8-wallet-64.png">
 </head>
 <body>
 <form action="" style="max-width:500px; margin:auto">
@@ -94,7 +97,36 @@ use Lendable\Interview\Interpolation\Validators\LoanTermValidator;
 
                 $application = new LoanApplication($term, $amount);
                 $fee = (new FeeCalculator())->calculate($application);
-                echo "The fee on the loan is <b>&pound;$fee</b>";
+                ?>
+                <div style="max-width:500px; margin:auto">
+                    <h3>Loan Schedule:</h3>
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td>Term:</td>
+                            <td><?php
+                                echo $term ?> months
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Loan Amount:</td>
+                            <td>&pound;<?php
+                                echo number_format($amount, 2) ?></td>
+                        </tr>
+                        <tr>
+                            <td>Loan Fee:</td>
+                            <td><b>&pound;<?php
+                                    echo number_format($fee, 2) ?></b></td>
+                        </tr>
+                        <tr>
+                            <td>Total Repayable:</td>
+                            <td>&pound;<?php
+                                echo number_format($amount + $fee, 2) ?></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <?php
             } catch (Exception $e) {
                 echo 'An error occurred: <span class="error">' . $e->getMessage() . '</span>';
             }

@@ -40,6 +40,7 @@ body {
     cursor: pointer;
     width: 100%;
     opacity: 0.9;
+    border-radius: 23px;
 }
 
 .btn:hover {
@@ -49,4 +50,20 @@ body {
 .error {
     color: red;
     font-weight: bold;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid dodgerblue;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }
