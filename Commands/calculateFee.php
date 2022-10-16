@@ -7,6 +7,9 @@ use Lendable\Interview\Interpolation\Model\LoanApplication;
 use Lendable\Interview\Interpolation\Validators\LoanAmountValidator;
 use Lendable\Interview\Interpolation\Validators\LoanTermValidator;
 
+/**
+ * Optional parameters for the term & amount can be added via the command line
+ */
 if ($args = getopt('', ['term::', 'amount::'])) {
     foreach ($args as $key => $value) {
         if ($key == 'term' && LoanTermValidator::validateTerm($value = (int)$value)) {
@@ -19,6 +22,9 @@ if ($args = getopt('', ['term::', 'amount::'])) {
     }
 }
 
+/**
+ * Checks if the term has been provided & prompts the user to enter a value until a valid value is provided
+ */
 $term = $term ?? 0;
 
 while (!LoanTermValidator::validateTerm($term)) {
@@ -30,6 +36,9 @@ while (!LoanTermValidator::validateTerm($term)) {
     }
 }
 
+/**
+ * Checks if the amount has been provided & prompts the user to enter a value until a valid value is provided
+ */
 $amount = $amount ?? 0;
 
 while (!LoanAmountValidator::validateAmount($amount)) {
@@ -41,10 +50,16 @@ while (!LoanAmountValidator::validateAmount($amount)) {
     }
 }
 
+/**
+ * Calculate the fee
+ */
 $application = new LoanApplication($term, $amount);
 $fee = (new FeeCalculator())->calculate($application);
+
+/**
+ * Puts the loan schedule together & writes it on the command line screen
+ */
 $message = "Loan Schedule:\nTerm: $term months\nLoan Amount: £" . number_format($amount, 2);
 $message .= "\nLoan Fee: £" . number_format($fee, 2);
 $message .= "\nTotal Repayable: £" . number_format($amount + $fee, 2);
 fwrite(STDOUT, $message);
-return $fee;
