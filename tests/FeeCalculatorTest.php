@@ -5,7 +5,7 @@ namespace Lendable\Interview\Interpolation\Tests;
 use Lendable\Interview\Interpolation\Model\FeeCalculator;
 use Lendable\Interview\Interpolation\Model\LoanApplication;
 
-class FeeCalculatorDataProvider extends FeeCalculationDataProvider
+class FeeCalculatorTest extends FeeCalculationTestDataProvider
 {
     /**
      * Tests the fee calculations

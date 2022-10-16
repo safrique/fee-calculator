@@ -2,7 +2,7 @@
 
 namespace Lendable\Interview\Interpolation\Tests;
 
-class CommandlineCalculationDataProvider extends FeeCalculationDataProvider
+class CommandlineCalculationTest extends FeeCalculationTestDataProvider
 {
     /**
      * Tests the calculation response is a string

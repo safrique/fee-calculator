@@ -4,7 +4,7 @@ namespace Lendable\Interview\Interpolation\Tests;
 
 use PHPUnit\Framework\TestCase;
 
-abstract class FeeCalculationDataProvider extends TestCase
+abstract class FeeCalculationTestDataProvider extends TestCase
 {
     /**
      * Provides the test data for testing the fee calculations

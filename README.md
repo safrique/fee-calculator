@@ -103,3 +103,50 @@ The fee structure doesn't follow particular algorithm and it is possible that sa
 # Submitting your solution
 
 Please do not make a public repository for your solution. Instead, please submit your solution either as a git bundle (from a local or private repository) or compress your solution into a zip archive.
+
+# SOLUTION
+
+### _Josef van Niekerk_
+
+The solution can be used in 2 ways, via the web browser & via the command line console.
+
+## Installation
+
+### Prerequisites
+
+The user needs `composer` installed and needs a web server running.
+
+1. Create a folder called `fee-calculator` in the user's local repository directory.
+2. To start the installation, run the following command: `composer install`
+
+## Browser
+
+To see the solution working in a browser window, navigate to http://localhost/fee-calculator. By default, the 
+minimum term (12 months) & minimum loan amount (£1,000) will be selected. The user can change these values within 
+the parameters indicated within the instructions above. Once the user clicks the Submit button, the page will 
+display the loan schedule for the selected values.
+
+## Command Line
+
+In the command line window, navigate to the folder where the project has been installed. Run the `cd Commands` 
+command to get to the directory to run the commands from. To run the calculation, run the command: `php calculateFee.
+php`. The solution will ask the user to enter a valid term & loan amount. If the user doesn't enter valid values, it 
+will keep asking until valid values have been provided.
+
+The solution also has the option to send in the term & amount with the command, e.g. `php calculateFee.php --term=12 
+--amount=1000`. For the solution to work correctly, both the term & amount have to be added, or else the solution 
+will ask the user to provide both.
+
+## Cache
+
+A rudimentary caching system has been built to help speed the processing up. The caching happens in 2 separate 
+places and caching is kept for 5 hours.
+
+1. Web Page Cache: The HTML for all pages displayed in the browser are cached as pure HTML files.
+2. Calculations: Calculations are also cached, so they don't have to be recalculated again if the same calculation is 
+   requested within the caching time.
+
+## Testing
+
+To run the tests, navigate to the project root directory and run the command: `./vendor/bin/phpunit --testdox tests
+` for descriptive set of automated tests.

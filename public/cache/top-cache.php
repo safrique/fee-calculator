@@ -10,9 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['term']) && !empty($_P
 }
 
 $cacheFile = str_replace('.', '-', "public/cache/cached_files/$cacheFile") . '.html';
-//$cacheTime = 18000;
 
-// Serve from the cache if it is younger than $cacheTime
+// Serve from the cache if it is younger than 5 hours
 if (file_exists($cacheFile) && time() - 18000 < filemtime($cacheFile)) {
     echo "<!-- Cached copy, generated " . date('H:i', filemtime($cacheFile)) . " -->\n";
     readfile($cacheFile);
