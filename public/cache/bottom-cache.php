@@ -1,9 +1,7 @@
 <?php
 
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    // Cache the contents to a cache file
-    $cached = fopen($cachefile, 'w');
-    fwrite($cached, ob_get_contents());
-    fclose($cached);
-    ob_end_flush(); // Send the output to the browser
-}
+// Cache the contents to a cache file
+$cached = fopen($cacheFile, 'w');
+fwrite($cached, ob_get_contents());
+fclose($cached);
+ob_end_flush(); // Send the output to the browser
